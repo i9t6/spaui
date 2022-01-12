@@ -70,7 +70,7 @@ if __name__ == '__main__':
             try:
                 response = m.dispatch(et.fromstring(rpc))
                 data_xml = et.fromstring(response.xml)
-                rib_dict = xmltodict.parse(response.xml)["rpc-reply"]["data"]
+                data_dict = xmltodict.parse(response.xml)["rpc-reply"]["data"]
             except RPCError as e:
                 data = e._raw
 
@@ -81,4 +81,4 @@ if __name__ == '__main__':
             # print(response.xml)
 
             # print as dictionary
-            # print(rib_dict)
+            # print(data_dict)
